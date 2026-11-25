@@ -1,0 +1,141 @@
+/* ---------- Değişkenler ---------- */
+:root {
+  --renk-arka-plan: #f7f9fb;
+  --renk-yuzey: #ffffff;
+  --renk-metin: #1b2430;
+  --renk-metin-soluk: #5b6676;
+  --renk-vurgu: #1f5eff;
+  --renk-vurgu-koyu: #1648c9;
+  --renk-cizgi: #dde3ea;
+  --renk-krem: #F1DDC9;
+  --renk-kirmizi:#D84727;
+  --renk-fusya:#DA5E42;
+
+  --font-ana: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --bosluk-s: 0.5rem;
+  --bosluk-m: 1rem;
+  --bosluk-l: 2rem;
+  --bosluk-xl: 4rem;
+
+  --genislik-icerik: 68rem;
+}
+
+/* ---------- Sıfırlama ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1, h2, h3, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ---------- Temel tipografi ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-ana);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--renk-metin);
+  background: var(--renk-arka-plan);
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); margin-bottom: var(--bosluk-m); }
+h3 { font-size: 1.25rem; margin-bottom: var(--bosluk-s); }
+
+p {
+  max-width: 65ch;
+  color: var(--renk-metin-soluk);
+}
+
+a {
+  color: var(--renk-vurgu);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--renk-vurgu);
+  outline-offset: 3px;
+}
+
+/* ---------- Genel yerleşim ---------- */
+header,
+footer,
+main > section {
+  width: min(100% - 2rem, var(--genislik-icerik));
+  margin-inline: auto;
+}
+
+main > section {
+  padding-block: var(--bosluk-xl);
+  border-bottom: 1px solid var(--renk-cizgi);
+}
+
+main > section:last-child {
+  border-bottom: 0;
+}
+
+header,
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--bosluk-m);
+  padding-block: var(--bosluk-m);
+}
+
+header nav ul,
+footer nav ul {
+  display: flex;
+  gap: var(--bosluk-l);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--renk-metin);
+}
+
+/* ---------- Buton ---------- */
+.button {
+  display: inline-block;
+  margin-top: var(--bosluk-m);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--renk-vurgu);
+  color: #fff;
+  font-weight: 600;
+}
+
+.button:hover {
+  background: var(--renk-vurgu-koyu);
+  text-decoration: none;
+}
+
+/* ---------- Hareket tercihi ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
